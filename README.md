@@ -2,6 +2,8 @@
 
 A Christmas-themed, webcam-controlled slicing game that runs entirely in the browser.
 
+**Play it: [bauble-ninja.vercel.app](https://bauble-ninja.vercel.app)**
+
 - Your webcam feed is segmented so only you appear, placed on a snowy night backdrop.
 - Your hands leave trails that fade after about a second.
 - Only fast swings count as a chop (slow arm movement leaves a faint trail and cuts nothing).
