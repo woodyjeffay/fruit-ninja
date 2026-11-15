@@ -162,7 +162,6 @@ h2 { font-size: clamp(32px, 5vw, 52px); }
   font-size: clamp(16px, 2vw, 19px);
   line-height: 1.45;
 }
-.fine { margin: 18px 0 0; font-size: 13px; opacity: .65; }
 
 .btn {
   appearance: none;
