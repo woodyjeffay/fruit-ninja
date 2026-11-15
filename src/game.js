@@ -119,6 +119,7 @@ export class Game {
         if (o.kind === 'bauble') {
           this.popups.push({ x: o.x, y: this.h - this.unit * 1.2, text: '✕', color: '#ff5a6a', life: 1 });
           this.#loseLife();
+          if (this.mode !== 'playing') break; // game over cleared the field
         }
       }
     }
@@ -159,6 +160,7 @@ export class Game {
         this.#burst(o.x, o.y, '#333', 14);
         this.popups.push({ x: o.x, y: o.y, text: 'BOOM', color: '#ff8a3c', life: 1 });
         this.#loseLife();
+        if (this.mode !== 'playing') return; // game over cleared the field
       } else {
         this.#split(o, angle);
         this.#burst(o.x, o.y, o.color[0], 12);
