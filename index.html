@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bauble Ninja</title>
+  <meta name="description" content="A Christmas webcam game: slice the falling baubles with your hands, dodge the bombs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <video id="cam" playsinline muted></video>
+
+  <div id="hud" hidden>
+    <div class="hud-score"><span class="hud-label">Score</span><span id="score">0</span></div>
+    <div class="hud-lives" id="lives" aria-label="Lives">
+      <span class="life"></span><span class="life"></span><span class="life"></span>
+    </div>
+  </div>
+
+  <div id="hint" hidden>Step back so the camera can see your arms</div>
+
+  <section class="screen" id="screen-intro">
+    <div class="card">
+      <p class="eyebrow">A webcam slicing game</p>
+      <h1>Bauble Ninja</h1>
+      <p class="lede">Swing your arms to slice the falling baubles. Let one drop, or hit a bomb, and you lose a life.</p>
+      <button class="btn" id="btn-camera">Turn on camera</button>
+      <p class="fine">Video stays on your device. Nothing is recorded or uploaded.</p>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-loading" hidden>
+    <div class="card">
+      <div class="spinner" aria-hidden="true"></div>
+      <h2 id="loading-text">Waking up the elves…</h2>
+    </div>
+  </section>
+
+  <section class="screen" id="screen-error" hidden>
+    <div class="card">
+      <h2>We couldn't reach your camera</h2>
+      <p class="lede" id="error-text">Allow camera access in your browser, then try again.</p>
+      <button class="btn" id="btn-retry">Try again</button>
+      <button class="btn btn-ghost" id="btn-mouse">Play with mouse or touch</button>
+    </div>
+  </section>
+
+  <section class="screen screen-passive" id="screen-ready" hidden>
+    <div class="banner">
+      <h2>Slice the bauble to start</h2>
+      <p>Swing fast to chop. Slow moves won't cut.</p>
+    </div>
+    <ul class="rules">
+      <li><span class="dot dot-bauble"></span>Slice baubles for points</li>
+      <li><span class="dot dot-miss"></span>Miss one, lose a life</li>
+      <li><span class="dot dot-bomb"></span>Hit a bomb, lose a life</li>
+    </ul>
+  </section>
+
+  <section class="screen screen-passive" id="screen-over" hidden>
+    <div class="banner">
+      <p class="eyebrow">Game over</p>
+      <h2>You sliced <span id="final-score">0</span></h2>
+      <p>Slice the bauble to play again</p>
+    </div>
+  </section>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
